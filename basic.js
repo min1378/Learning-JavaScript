@@ -84,14 +84,22 @@ Array.prototype.getIndex = function() {};
 //     // 그렇기 때문에 for in은 자제를 해야 한다.
 // }
 
-for (let value of data) {
-    console.log(value); // 1 2 undefined NaN null ""
-    // in과 다르게 prototype 추가된 객체는 표현하지 않음. 
-    // for of를 애용하자!
-}
+// for (let value of data) {
+//     console.log(value); // 1 2 undefined NaN null ""
+//     // in과 다르게 prototype 추가된 객체는 표현하지 않음. 
+//     // for of를 애용하자!
+// }
 
-var str = "hello world!!!!";
-for (let value of str) {
-    console.log(value); // h e l l o  w o r l d ! ! ! ! 
-    // 문자열도 하나씩 접근 가능하다.
-}
+// var str = "hello world!!!!";
+// for (let value of str) {
+//     console.log(value); // h e l l o  w o r l d ! ! ! ! 
+//     // 문자열도 하나씩 접근 가능하다.
+// }
+
+// spread operator, 펼침연산자.
+
+let pre = ["apple", "orange", 100];
+let newData = [...pre]; // 복사를 하는 것. 
+// ... 의미는 펼친다는 뜻. spread operator
+console.log(newData) // ["apple", "orange", 100]
+console.log(pre === newData) // false
