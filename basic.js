@@ -44,16 +44,26 @@
 // }
 // home();
 
-function home() {
-    const list = ["apple", "orange", "watermelon"];
-    // const 재할당은 안되지만 추가하거나 삭제는 가능하다.
-    list.push("banana");
-    console.log(list);
-}
-home();
-// immutable array를 어떻게 만들까?
-const list = ["apple", "orange", "watermelon"];
-list2 = [].concat(list, "banana");
-console.log(list);
-console.log(list2);
-console.log(list === list2);
+// function home() {
+//     const list = ["apple", "orange", "watermelon"];
+//     // const 재할당은 안되지만 추가하거나 삭제는 가능하다.
+//     list.push("banana");
+//     console.log(list);
+// }
+// home();
+// // immutable array를 어떻게 만들까?
+// const list = ["apple", "orange", "watermelon"];
+// list2 = [].concat(list, "banana");
+// console.log(list);
+// console.log(list2);
+// console.log(list === list2);
+
+// ES2015 string에 새로운 메서드들.
+let str = "hello world ! ^^ ~~";
+// 이 str이 hello로 시작하는가 판단여부.. 1) 정규표현식
+let matchstr = "hello";
+// 2) matchstr길이만큼 잘라 그다음 일치하는지 비교
+let matchstr2 = "^~~";
+console.log(str.startsWith(matchstr)); // 시작 true
+console.log(str.endsWith(matchstr2)); // 끝 false 
+console.log(str.includes("world")); // 안에 있니? true
