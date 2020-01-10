@@ -25,21 +25,35 @@
 //     });
 // }
 
+// function home() {
+//     var homename = 'my house';
+//     console.log(homename) // my house
+//     homename = "your house";
+//     console.log(homename) // your house
+//     const homename2 = 'my house';
+//     console.log(homename2) // my house
+//         // homename2 = "your house"; // TypeError: Assignment to constant variable. const형엔 대입 불가.
+
+
+//     const homename3 = [1, 2, 3, 3];
+//     homename3 = ["1", "2"] // TypeError: Assignment to constant variable.
+//     console.log(homename3)
+//         // const를 기본으로 사용한다.
+//         // 그런데 변경이 될 수 있는 변수는 let을 사용한다.
+//         // var는 사용하지 않는다.
+// }
+// home();
+
 function home() {
-    var homename = 'my house';
-    console.log(homename) // my house
-    homename = "your house";
-    console.log(homename) // your house
-    const homename2 = 'my house';
-    console.log(homename2) // my house
-        // homename2 = "your house"; // TypeError: Assignment to constant variable. const형엔 대입 불가.
-
-
-    const homename3 = [1, 2, 3, 3];
-    homename3 = ["1", "2"] // TypeError: Assignment to constant variable.
-    console.log(homename3)
-        // const를 기본으로 사용한다.
-        // 그런데 변경이 될 수 있는 변수는 let을 사용한다.
-        // var는 사용하지 않는다.
+    const list = ["apple", "orange", "watermelon"];
+    // const 재할당은 안되지만 추가하거나 삭제는 가능하다.
+    list.push("banana");
+    console.log(list);
 }
 home();
+// immutable array를 어떻게 만들까?
+const list = ["apple", "orange", "watermelon"];
+list2 = [].concat(list, "banana");
+console.log(list);
+console.log(list2);
+console.log(list === list2);
