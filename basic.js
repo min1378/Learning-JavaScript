@@ -58,12 +58,40 @@
 // console.log(list2);
 // console.log(list === list2);
 
-// ES2015 string에 새로운 메서드들.
-let str = "hello world ! ^^ ~~";
-// 이 str이 hello로 시작하는가 판단여부.. 1) 정규표현식
-let matchstr = "hello";
-// 2) matchstr길이만큼 잘라 그다음 일치하는지 비교
-let matchstr2 = "^~~";
-console.log(str.startsWith(matchstr)); // 시작 true
-console.log(str.endsWith(matchstr2)); // 끝 false 
-console.log(str.includes("world")); // 안에 있니? true
+// // ES2015 string에 새로운 메서드들.
+// let str = "hello world ! ^^ ~~";
+// // 이 str이 hello로 시작하는가 판단여부.. 1) 정규표현식
+// let matchstr = "hello";
+// // 2) matchstr길이만큼 잘라 그다음 일치하는지 비교
+// let matchstr2 = "^~~";
+// console.log(str.startsWith(matchstr)); // 시작 true
+// console.log(str.endsWith(matchstr2)); // 끝 false 
+// console.log(str.includes("world")); // 안에 있니? true
+
+var data = [1, 2, undefined, NaN, null, ""];
+// for (var i = 0; i < data.length; i++) {
+//     console.log(i); // 0 1 2 3 4 5
+// }
+
+// data.forEach(function(value) {
+//     console.log("valueis", value); // 1 2 undefined NaN null ""
+// })
+Array.prototype.getIndex = function() {};
+
+// for (let idx in data) {
+//     console.log(data[idx]); // 1 2 undefined NaN null "" [Function]
+//     // prototype의 추가된 객체를 나타내는 현상이 있다.
+//     // 그렇기 때문에 for in은 자제를 해야 한다.
+// }
+
+for (let value of data) {
+    console.log(value); // 1 2 undefined NaN null ""
+    // in과 다르게 prototype 추가된 객체는 표현하지 않음. 
+    // for of를 애용하자!
+}
+
+var str = "hello world!!!!";
+for (let value of str) {
+    console.log(value); // h e l l o  w o r l d ! ! ! ! 
+    // 문자열도 하나씩 접근 가능하다.
+}
